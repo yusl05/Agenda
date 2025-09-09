@@ -15,5 +15,20 @@ namespace Agenda.Utilidades
         public String direccion { get; set; }
         public String telefono { get; set; }
         public String correo { get; set; }
+
+        public Persona(string nombre, string apPat, string apMat, string direccion, string telefono, string correo)
+        {
+            this.nombre = nombre;
+            this.apPat = apPat;
+            this.apMat = apMat;
+            this.direccion = direccion;
+            this.telefono = telefono;
+            this.correo = correo;
+        }
+
+        public Persona()
+        {
+
+        }
     }
 }
