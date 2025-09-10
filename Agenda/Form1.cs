@@ -17,27 +17,10 @@ namespace Agenda
     public partial class Form1 : Form
     {
         public string rutaJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "datos.json");
-        //string contenido = File.ReadAllText(rutaJson);
 
         public Form1()
         {
-            if (!File.Exists(rutaJson))
-            {
-                var datosIniciales = new BaseDatosJson
-                {
-                    personas = new List<Persona>(),
-                    totalRegistros = 0
-                };
-
-                guardarJson(datosIniciales);
-            }
-
-            
-
             InitializeComponent();
-            tmrTiempo.Interval = 5000;
-            tmrTiempo.Tick += timer1_Tick;
-            tmrTiempo.Start();
 
             try
             {
@@ -103,5 +86,7 @@ namespace Agenda
             string json = JsonConvert.SerializeObject(lista, caracteristicas);
             File.WriteAllText(rutaJson, json);
         }
+
+        
     }
 }

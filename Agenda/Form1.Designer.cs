@@ -30,16 +30,15 @@
         {
             this.components = new System.ComponentModel.Container();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.dGVDatos = new System.Windows.Forms.DataGridView();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.tmrTiempo = new System.Windows.Forms.Timer(this.components);
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sSEstado = new System.Windows.Forms.StatusStrip();
+            this.tmrTiempo = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -60,20 +59,10 @@
             // 
             // splitContainer1.Panel2
             // 
-            this.splitContainer1.Panel2.Controls.Add(this.btnEliminar);
-            this.splitContainer1.Panel2.Controls.Add(this.statusStrip1);
+            this.splitContainer1.Panel2.Controls.Add(this.sSEstado);
             this.splitContainer1.Size = new System.Drawing.Size(1309, 443);
             this.splitContainer1.SplitterDistance = 347;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.statusStrip1.Location = new System.Drawing.Point(0, 70);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1309, 22);
-            this.statusStrip1.TabIndex = 0;
-            this.statusStrip1.Text = "statusStrip1";
             // 
             // dGVDatos
             // 
@@ -91,21 +80,6 @@
             this.dGVDatos.RowTemplate.Height = 28;
             this.dGVDatos.Size = new System.Drawing.Size(1309, 344);
             this.dGVDatos.TabIndex = 0;
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(27, 18);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(98, 39);
-            this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // tmrTiempo
-            // 
-            this.tmrTiempo.Enabled = true;
-            this.tmrTiempo.Interval = 1000;
-            this.tmrTiempo.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Column1
             // 
@@ -149,6 +123,21 @@
             this.Column6.Name = "Column6";
             this.Column6.Width = 200;
             // 
+            // sSEstado
+            // 
+            this.sSEstado.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.sSEstado.Location = new System.Drawing.Point(0, 70);
+            this.sSEstado.Name = "sSEstado";
+            this.sSEstado.Size = new System.Drawing.Size(1309, 22);
+            this.sSEstado.TabIndex = 0;
+            this.sSEstado.Text = "statusStrip1";
+            // 
+            // tmrTiempo
+            // 
+            this.tmrTiempo.Enabled = true;
+            this.tmrTiempo.Interval = 1000;
+            this.tmrTiempo.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -171,8 +160,7 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dGVDatos;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.Button btnEliminar;
+        private System.Windows.Forms.StatusStrip sSEstado;
         private System.Windows.Forms.Timer tmrTiempo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
