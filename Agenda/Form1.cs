@@ -32,10 +32,33 @@ namespace Agenda
                 guardarJson(datosIniciales);
             }
 
+            
+
             InitializeComponent();
             tmrTiempo.Interval = 5000;
             tmrTiempo.Tick += timer1_Tick;
             tmrTiempo.Start();
+
+            try
+            {
+                String json = File.ReadAllText(rutaJson);
+                var registros = JsonConvert.DeserializeObject<BaseDatosJson>(json);
+                CargarRegistros(registros);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void CargarRegistros(BaseDatosJson registros)
+        {
+            dGVDatos.Rows.Clear();
+            foreach (var persona in registros.personas)
+            {
+                dGVDatos.Rows.Add(new object[] { persona.nombre, persona.apPat, persona.apMat, persona.direccion, persona.telefono, persona.correo });
+            }
+
         }
 
         private void timer1_Tick(object sender, EventArgs e)
