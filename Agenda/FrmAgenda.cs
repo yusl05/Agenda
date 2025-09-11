@@ -14,13 +14,29 @@ using System.Windows.Forms;
 
 namespace Agenda
 {
-    public partial class Form1 : Form
+    public partial class FrmAgenda : Form
     {
-        public string rutaJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "datos.json");
+        public string rutaJson = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "persona.json");
 
-        public Form1()
+        public FrmAgenda()
         {
             InitializeComponent();
+            iniciarInformacion();
+        }
+
+        public void iniciarInformacion()
+        {
+            if (!File.Exists(rutaJson))
+            {
+                var datosIniciales = new BaseDatosJson
+                {
+                    personas = new List<Persona>(),
+                    totalRegistros = 0,
+                    actualizacion = DateTime.Now
+                };
+
+                guardarJson(datosIniciales);
+            }
 
             try
             {
@@ -32,7 +48,6 @@ namespace Agenda
             {
                 MessageBox.Show("Error: " + ex.Message, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            
         }
 
         private void CargarRegistros(BaseDatosJson registros)
@@ -42,7 +57,7 @@ namespace Agenda
             {
                 dGVDatos.Rows.Add(new object[] { persona.nombre, persona.apPat, persona.apMat, persona.direccion, persona.telefono, persona.correo });
             }
-            tSSLActualizacion.Text = "Última actualización: " + registros.actualizacion.ToString();
+            tSSLActualizacion.Text = "   Última actualización: " + registros.actualizacion.ToString();
             tSSLabNumPersonas.Text = "Personas registradas: " + registros.totalRegistros.ToString();
         }
 
@@ -89,5 +104,9 @@ namespace Agenda
             File.WriteAllText(rutaJson, json);
         }
 
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
