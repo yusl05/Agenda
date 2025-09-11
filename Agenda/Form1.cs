@@ -32,6 +32,7 @@ namespace Agenda
             {
                 MessageBox.Show("Error: " + ex.Message, "Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         private void CargarRegistros(BaseDatosJson registros)
@@ -41,7 +42,8 @@ namespace Agenda
             {
                 dGVDatos.Rows.Add(new object[] { persona.nombre, persona.apPat, persona.apMat, persona.direccion, persona.telefono, persona.correo });
             }
-
+            tSSLActualizacion.Text = "Última actualización: " + registros.actualizacion.ToString();
+            tSSLabNumPersonas.Text = "Personas registradas: " + registros.totalRegistros.ToString();
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -87,6 +89,5 @@ namespace Agenda
             File.WriteAllText(rutaJson, json);
         }
 
-        
     }
 }

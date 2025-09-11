@@ -38,12 +38,15 @@
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sSEstado = new System.Windows.Forms.StatusStrip();
+            this.tSSLActualizacion = new System.Windows.Forms.ToolStripStatusLabel();
             this.tmrTiempo = new System.Windows.Forms.Timer(this.components);
+            this.tSSLabNumPersonas = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dGVDatos)).BeginInit();
+            this.sSEstado.SuspendLayout();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -126,17 +129,32 @@
             // sSEstado
             // 
             this.sSEstado.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.sSEstado.Location = new System.Drawing.Point(0, 70);
+            this.sSEstado.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.tSSLActualizacion,
+            this.tSSLabNumPersonas});
+            this.sSEstado.Location = new System.Drawing.Point(0, 60);
             this.sSEstado.Name = "sSEstado";
-            this.sSEstado.Size = new System.Drawing.Size(1309, 22);
+            this.sSEstado.Size = new System.Drawing.Size(1309, 32);
             this.sSEstado.TabIndex = 0;
             this.sSEstado.Text = "statusStrip1";
+            // 
+            // tSSLActualizacion
+            // 
+            this.tSSLActualizacion.Name = "tSSLActualizacion";
+            this.tSSLActualizacion.Size = new System.Drawing.Size(179, 25);
+            this.tSSLActualizacion.Text = "toolStripStatusLabel1";
             // 
             // tmrTiempo
             // 
             this.tmrTiempo.Enabled = true;
             this.tmrTiempo.Interval = 1000;
             this.tmrTiempo.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // tSSLabNumPersonas
+            // 
+            this.tSSLabNumPersonas.Name = "tSSLabNumPersonas";
+            this.tSSLabNumPersonas.Size = new System.Drawing.Size(179, 25);
+            this.tSSLabNumPersonas.Text = "toolStripStatusLabel1";
             // 
             // Form1
             // 
@@ -152,6 +170,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dGVDatos)).EndInit();
+            this.sSEstado.ResumeLayout(false);
+            this.sSEstado.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -168,6 +188,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private System.Windows.Forms.ToolStripStatusLabel tSSLActualizacion;
+        private System.Windows.Forms.ToolStripStatusLabel tSSLabNumPersonas;
     }
 }
 
