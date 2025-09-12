@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmAgenda));
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dGVDatos = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -191,8 +192,9 @@
             this.ClientSize = new System.Drawing.Size(1309, 443);
             this.Controls.Add(this.splitContainer1);
             this.Controls.Add(this.mnSSalir);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmAgenda";
-            this.Text = "Form1";
+            this.Text = "Agenda";
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             this.splitContainer1.Panel2.PerformLayout();

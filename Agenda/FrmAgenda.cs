@@ -34,7 +34,6 @@ namespace Agenda
                     totalRegistros = 0,
                     actualizacion = DateTime.Now
                 };
-
                 guardarJson(datosIniciales);
             }
 
@@ -83,11 +82,9 @@ namespace Agenda
                     persona.correo = fila.Cells[5].Value?.ToString() ?? "";
                 }
                 registros.personas.Add(persona);
-
             }
             registros.totalRegistros = registros.personas.Count;
             return registros;
-
         }
 
         public void guardarJson(BaseDatosJson lista)
@@ -99,7 +96,6 @@ namespace Agenda
                 NullValueHandling = NullValueHandling.Ignore,
 
             };
-
             string json = JsonConvert.SerializeObject(lista, caracteristicas);
             File.WriteAllText(rutaJson, json);
         }
